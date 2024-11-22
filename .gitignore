@@ -1,5 +1,4 @@
 # .gitignore from https://start.spring.io/
-HELP.md
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
