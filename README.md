@@ -7,3 +7,7 @@ started with https://start.spring.io/ and
 - Spring Boot: 3.4.0
 - Packaging: Jar
 - Java: 21
+
+# Develop
+
+- Run with `./gradlew bootRun --args=''`
