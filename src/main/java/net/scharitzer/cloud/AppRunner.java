@@ -4,6 +4,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Set;
 
 @Component
@@ -26,6 +27,10 @@ public class AppRunner implements ApplicationRunner {
 		}
 		if (args.containsOption("v")) {
 			System.out.println(CloudApplication.VERSION);
+		}
+		List<String> commands = args.getNonOptionArgs();
+		for (String command: commands) {
+			System.out.println(command); // TODO log level
 		}
 	}
 }

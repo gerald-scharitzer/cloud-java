@@ -15,10 +15,16 @@ with communication links (edges).
 
 One and the same Java bytecode can run on nodes with different processor,
 system, and operating system architectures,
-as long as there is a compliant JVM implementation.
+as long as there is a compliant Java Virtual Machine (JVM) implementation.
+
+The Just-in-Time compiler (JIT) can optimize the bytecode for the instruction set architecture it is running on.
 
 Java applications can communicate with the cloud through the standard library
 and an ecosystem of public Java libraries.
+
+Java is the most energy- and time-efficient, non-compiled programming language
+in the study [Energy Efficiency across Programming Languages](https://sites.google.com/view/energy-efficiency-languages)
+published in 2017.
 
 # Develop
 
