@@ -1,5 +1,6 @@
 package net.scharitzer.cloud;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -19,6 +20,9 @@ public class AppRunner implements ApplicationRunner {
 			print options
 		--v
 			print version""";
+
+	@Value("${provider}")
+	private String provider;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -54,5 +58,7 @@ public class AppRunner implements ApplicationRunner {
 		if (args.containsOption("v")) {
 			System.out.println(CloudApplication.VERSION);
 		}
+
+		System.out.println(provider); // TODO remove
 	}
 }
