@@ -24,6 +24,9 @@ public class AppRunner implements ApplicationRunner {
 	@Value("${provider}")
 	private String provider;
 
+	@Value("${azure.clientId}")
+	private String clientId;
+
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		if (args.getSourceArgs().length == 0) {
@@ -60,5 +63,6 @@ public class AppRunner implements ApplicationRunner {
 		}
 
 		System.out.println(provider); // TODO remove
+		System.out.println(clientId); // TODO remove
 	}
 }
