@@ -1,5 +1,7 @@
 package net.scharitzer.cloud;
 
+import net.scharitzer.cloud.provider.Provider;
+import net.scharitzer.cloud.provider.azure.Azure;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -22,10 +24,7 @@ public class AppRunner implements ApplicationRunner {
 			print version""";
 
 	@Value("${provider}")
-	private String provider;
-
-	@Value("${azure.clientId}")
-	private String clientId;
+	private String providerName;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -62,7 +61,8 @@ public class AppRunner implements ApplicationRunner {
 			System.out.println(CloudApplication.VERSION);
 		}
 
-		System.out.println(provider); // TODO remove
-		System.out.println(clientId); // TODO remove
+		System.out.println(providerName); // TODO remove
+		Provider provider = new Azure();
+		provider.responds();
 	}
 }
