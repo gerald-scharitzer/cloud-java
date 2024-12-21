@@ -1,9 +1,10 @@
 package net.scharitzer.cloud;
 
+import net.scharitzer.cloud.provider.Provider;
+import net.scharitzer.cloud.provider.azure.Azure;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-import java.util.Arrays;
 
 @Component
 public class CommandRunner implements CommandLineRunner {
@@ -18,18 +19,27 @@ public class CommandRunner implements CommandLineRunner {
 		v
 			print version""";
 
+	@Value("${provider}")
+	private String providerName;
+
 	@Override
 	public void run(String... args) throws Exception {
-		runCommands(Arrays.asList(args));
-	}
+		if (args.length == 0) {
+			System.out.println(USAGE);
+			return;
+		}
 
-	public void runCommands(Iterable<String> commands) {
-		for (String command: commands) {
-			System.out.println(command); // TODO remove
-			if (command.equals("v")) {
+		System.out.println(providerName); // TODO remove
+
+		for (String arg: args) {
+			System.out.println(arg); // TODO remove
+			if (arg.equals("v")) {
 				System.out.println(CloudApplication.VERSION);
 			}
 		}
+
+		Provider provider = new Azure();
+		provider.responds();
 	}
 
 }
