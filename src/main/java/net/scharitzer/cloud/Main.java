@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class CloudApplication {
+public class Main {
 
 	public static final String VERSION = "0.0.1-SNAPSHOT";
 
@@ -16,7 +16,7 @@ public class CloudApplication {
 	}
 
 	public static void main(String[] args) {
-		int status = SpringApplication.exit(SpringApplication.run(CloudApplication.class, args));
+		int status = SpringApplication.exit(SpringApplication.run(Main.class, args));
 		System.exit(status);
 	}
 

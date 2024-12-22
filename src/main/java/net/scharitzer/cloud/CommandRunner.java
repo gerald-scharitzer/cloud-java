@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class CommandRunner implements CommandLineRunner {
 
 	public static final String USAGE = """
-		Usage: java net.scharitzer.cloud.CloudApplication [arguments]
+		Usage: java net.scharitzer.cloud.Main [arguments]
 		
 		No arguments prints this usage message.
 		
@@ -34,7 +34,7 @@ public class CommandRunner implements CommandLineRunner {
 		for (String arg: args) {
 			System.out.println(arg); // TODO remove
 			if (arg.equals("v")) {
-				System.out.println(CloudApplication.VERSION);
+				System.out.println(Main.VERSION);
 			}
 		}
 
