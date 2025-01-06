@@ -19,6 +19,8 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter")
+	implementation(platform("com.azure:azure-sdk-bom:1.2.30"))
+	implementation("com.azure.resourcemanager:azure-resourcemanager-subscription:1.0.0")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }

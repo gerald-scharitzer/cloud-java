@@ -1,5 +1,7 @@
 package net.scharitzer.cloud.provider.azure;
 
+import com.azure.core.management.AzureEnvironment;
+import com.azure.core.management.profile.AzureProfile;
 import net.scharitzer.cloud.provider.Provider;
 import net.scharitzer.cloud.provider.ProviderException;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,6 +15,7 @@ public class Azure implements Provider {
 
 	@Override
 	public void responds() throws ProviderException {
+		AzureProfile profile = new AzureProfile(AzureEnvironment.AZURE);
 		System.out.println(clientId); // TODO remove
 	}
 
