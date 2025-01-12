@@ -29,3 +29,9 @@ published in 2017.
 # Develop
 
 - Run with `./gradlew bootRun [--args='<arguments>']`
+- Pack with `./gradlew bootJar`
+- Run package with `java -jar build/libs/cloud-<version>.jar <arguments>`
+- Build image with `podman build build/libs -f Containerfile -t cloud-java:<version>`
+
+where `<version>` is the semantic version
+and `<arguments>` are the command line arguments.
