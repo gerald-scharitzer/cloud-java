@@ -28,10 +28,17 @@ published in 2017.
 
 # Develop
 
+with the following commands.
+
 - Run with `./gradlew bootRun [--args='<arguments>']`
 - Pack with `./gradlew bootJar`
 - Run package with `java -jar build/libs/cloud-<version>.jar <arguments>`
 - Build image with `podman build build/libs -f Containerfile -t cloud-java:<version>`
+- Run container with `podman run -t cloud-java`
+- Remove container with `podman rm <container>`
+- Remove image with `podman rmi cloud-java`
 
-where `<version>` is the semantic version
-and `<arguments>` are the command line arguments.
+where
+- `<arguments>` are the command line arguments
+- `<container>` is the name or ID of the container
+- `<version>` is the semantic version
