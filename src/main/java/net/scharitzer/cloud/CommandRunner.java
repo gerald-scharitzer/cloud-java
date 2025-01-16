@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintStream;
+
 @Component
 public class CommandRunner implements CommandLineRunner {
 
@@ -16,8 +20,14 @@ public class CommandRunner implements CommandLineRunner {
 		
 		Arguments:
 		
+		i
+			read input (default stdin)
+		
 		v
 			print version""";
+
+	private InputStream stdin = System.in;
+	private PrintStream stdout = System.out;
 
 	@Value("${provider}")
 	private String providerName;
@@ -25,21 +35,32 @@ public class CommandRunner implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		if (args.length == 0) {
-			System.out.println(USAGE);
+			stdout.println(USAGE);
 			return;
 		}
 
-		System.out.println(providerName); // TODO remove
+		stdout.println(providerName); // TODO remove
 
 		for (String arg: args) {
-			System.out.println(arg); // TODO remove
-			if (arg.equals("v")) {
-				System.out.println(Main.VERSION);
+			stdout.println(arg); // TODO remove
+			if (arg.equals("i")) {
+				readInput();
+			} else if (arg.equals("v")) {
+				printVersion();
 			}
 		}
 
 		Provider provider = new Azure();
 		provider.responds();
+	}
+
+	private void readInput() throws IOException {
+		int bits = stdin.read();
+		stdout.println(bits);
+	}
+
+	private void printVersion() {
+		stdout.println(Main.VERSION);
 	}
 
 }
