@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintStream;
+import java.io.*;
 
 @Component
 public class CommandRunner implements CommandLineRunner {
@@ -55,8 +53,13 @@ public class CommandRunner implements CommandLineRunner {
 	}
 
 	private void readInput() throws IOException {
-		int bits = stdin.read();
-		stdout.println(bits);
+		InputStreamReader chars = new InputStreamReader(stdin);
+		BufferedReader text = new BufferedReader(chars);
+		String line = text.readLine();
+		while (line != null) {
+			stdout.println(line); // TODO read yaml instead
+			line = text.readLine();
+		}
 	}
 
 	private void printVersion() {
