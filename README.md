@@ -37,8 +37,14 @@ with the following commands.
 - Run container with `podman run -t cloud-java`
 - Remove container with `podman rm <container>`
 - Remove image with `podman rmi cloud-java`
+- Clean with `./gradlew clean`
 
 where
 - `<arguments>` are the command line arguments
 - `<container>` is the name or ID of the container
 - `<version>` is the semantic version
+
+# Known Issues
+
+Reading `stdin` does not work from task `./gradlew bootRun --args='i' <stdin.yaml`,
+but `java -jar build/libs/cloud-<version>.jar i <stdin.yaml` works.
