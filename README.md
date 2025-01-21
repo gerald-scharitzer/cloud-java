@@ -37,6 +37,7 @@ with the following commands.
 - Run container with `podman run -t cloud-java`
 - Remove container with `podman rm <container>`
 - Remove image with `podman rmi cloud-java`
+- Lint chart with `. sh/lint-chart.sh`
 - Clean with `./gradlew clean`
 
 where
@@ -48,3 +49,7 @@ where
 
 Reading `stdin` does not work from task `./gradlew bootRun --args='i' <stdin.yaml`,
 but `java -jar build/libs/cloud-<version>.jar i <stdin.yaml` works.
+
+# Backlog
+
+Convert shell scripts to yaml and custom Gradle task.
