@@ -38,6 +38,7 @@ with the following commands.
 - Remove container with `podman rm <container>`
 - Remove image with `podman rmi cloud-java`
 - Lint chart with `. sh/lint-chart.sh`
+- Render chart with `. sh/render-chart.sh`
 - Clean with `./gradlew clean`
 
 where
