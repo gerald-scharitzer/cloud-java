@@ -1,0 +1,1 @@
+podman rmi cloud-java

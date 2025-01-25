@@ -33,10 +33,10 @@ with the following commands.
 - Run with `./gradlew bootRun [--args='<arguments>']`
 - Pack with `./gradlew bootJar`
 - Run package with `java -jar build/libs/cloud-<version>.jar <arguments>`
-- Build image with `podman build build/libs -f Containerfile -t cloud-java:<version>`
+- Build image with `. sh/build-image.sh`
 - Run container with `podman run -t cloud-java`
 - Remove container with `podman rm <container>`
-- Remove image with `podman rmi cloud-java`
+- Remove image with `. sh/remove-image.sh`
 - Lint chart with `. sh/lint-chart.sh`
 - Render chart with `. sh/render-chart.sh`
 - Clean with `./gradlew clean`
@@ -45,6 +45,15 @@ where
 - `<arguments>` are the command line arguments
 - `<container>` is the name or ID of the container
 - `<version>` is the semantic version
+
+## Release
+
+- Update year in [`LICENSE`](LICENSE)
+- Increment version in
+  - [`build.gradle.kts`](build.gradle.kts)
+  - [`Containerfile`](Containerfile)
+  - [`helm/cloud/Chart.yaml`](helm/cloud/Chart.yaml)
+  - [`sh/build-image.sh`](sh/build-image.sh)
 
 # Known Issues
 
