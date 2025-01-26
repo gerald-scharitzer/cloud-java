@@ -31,10 +31,19 @@ Create chart name and version as used by the chart label.
 {{- end }}
 
 {{/*
+Selector labels
+*/}}
+{{- define "cloud.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "cloud.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
+{{/*
 Common labels
 */}}
 {{- define "cloud.labels" -}}
 helm.sh/chart: {{ include "cloud.chart" . }}
+{{ include "cloud.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}

@@ -39,6 +39,9 @@ with the following commands.
 - Remove image with `. sh/remove-image.sh`
 - Lint chart with `. sh/lint-chart.sh`
 - Render chart with `. sh/render-chart.sh`
+- Dry-run chart with `. sh/dry-run-chart.sh`
+- Install chart with `. sh/install-chart.sh`
+- Uninstall release with `. sh/uninstall-release.sh`
 - Clean with `./gradlew clean`
 
 where

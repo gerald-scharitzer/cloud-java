@@ -1,1 +1,1 @@
-helm install --dry-run=client --hide-secret cloud-dev ./helm/cloud
+helm upgrade cloud-dev ./helm/cloud --dry-run=client --hide-secret -i
