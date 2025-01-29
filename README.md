@@ -25,10 +25,22 @@ and an ecosystem of public Java libraries.
 Java is the most energy- and time-efficient, non-compiled programming language
 in the study [Energy Efficiency across Programming Languages](https://sites.google.com/view/energy-efficiency-languages)
 published in 2017.
+It is also the number two of [The Top Programming Languages 2024](https://spectrum.ieee.org/top-programming-languages-2024)
+of [IEEE Spectrum](https://spectrum.ieee.org/)
+and its top non-interpreted language.
 
 # Develop
 
-with the following commands.
+with the following tools
+
+- [Java](https://adoptium.net/installation/) 21
+- [Spring Boot](https://docs.spring.io/spring-boot/system-requirements.html) 3.4
+- [Gradle](https://docs.gradle.org/current/userguide/installation.html) 8
+- [Podman](https://podman.io/docs/installation)
+- [Helm](https://helm.sh/docs/intro/install/) 3
+- [Kubernetes](https://kubernetes.io/docs/setup/)
+
+and the following commands.
 
 - Run with `./gradlew bootRun [--args='<arguments>']`
 - Pack with `./gradlew bootJar`
