@@ -48,12 +48,15 @@ and the following commands.
 - Build image with `. sh/build-image.sh`
 - Run container with `podman run -t cloud-java`
 - Remove container with `podman rm <container>`
-- Remove image with `. sh/remove-image.sh`
+- Login to registry with `podman login <registry>`
+- Push image with `podman push <image>`
+- Logout from registry with `podman logout <registry>`
 - Lint chart with `. sh/lint-chart.sh`
 - Render chart with `. sh/render-chart.sh`
 - Dry-run chart with `. sh/dry-run-chart.sh`
 - Install chart with `. sh/install-chart.sh`
 - Uninstall release with `. sh/uninstall-release.sh`
+- Remove image with `. sh/remove-image.sh`
 - Clean with `./gradlew clean`
 
 where
