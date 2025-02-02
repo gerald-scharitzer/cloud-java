@@ -62,6 +62,8 @@ and the following commands.
 where
 - `<arguments>` are the command line arguments
 - `<container>` is the name or ID of the container
+- `<image>` is the name of the image
+- `<registry>` is the name of the image registry
 - `<version>` is the semantic version
 
 ## Release
