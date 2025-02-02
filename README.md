@@ -29,6 +29,15 @@ It is also the number two of [The Top Programming Languages 2024](https://spectr
 of [IEEE Spectrum](https://spectrum.ieee.org/)
 and its top non-interpreted language.
 
+## Cloud-Native
+
+The relevant artifacts can be addressed with URIs.
+
+- source: Git repository `git clone https://githost/git-repository`
+- image: image registry `podman push https://imagehost/image-registry`
+- chart: chart registry `helm push chart https://charthost/chart-registry`
+- cluster: Kubernetes API
+
 # Develop
 
 with the following tools
@@ -82,4 +91,5 @@ but `java -jar build/libs/cloud-<version>.jar i <stdin.yaml` works.
 
 # Backlog
 
-Convert shell scripts to yaml and custom Gradle task.
+- Build with paketo.
+- Convert shell scripts to yaml and custom Gradle task.
