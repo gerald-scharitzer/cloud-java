@@ -33,10 +33,11 @@ and its top non-interpreted language.
 
 The relevant artifacts can be addressed with URIs.
 
-- source: Git repository `git clone https://githost/git-repository`
+- source: [Git repository](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols)
+  `git clone https://githost/git-repository`
 - image: image registry `podman push https://imagehost/image-registry`
 - chart: chart registry `helm push chart https://charthost/chart-registry`
-- cluster: Kubernetes API
+- cluster: Kubernetes API `kubectl login https://kubehost/kube-api`
 
 # Develop
 
