@@ -33,11 +33,16 @@ and its top non-interpreted language.
 
 The relevant artifacts can be addressed with URIs.
 
-- source: [Git repository](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols)
-  `git clone https://githost/git-repository`
-- image: image registry `podman push https://imagehost/image-registry`
-- chart: chart registry `helm push chart https://charthost/chart-registry`
-- cluster: Kubernetes API `kubectl login https://kubehost/kube-api`
+| artifact | purl type | endpoint         | usage                                              |
+|----------|-----------|------------------|----------------------------------------------------|
+| source   | github    | Git repository   | `git clone https://githost/git-repository`         |
+| library  | maven     | Maven repository | `implementation("group:name:version)`              |
+| image    | oci       | image registry   | `podman push https://imagehost/image-repository`   |
+| chart    | helm      | chart registry   | `helm push chart https://charthost/chart-registry` |
+| cluster  |           | Kubernetes API   | `kubectl login https://kubehost/kube-api`          |
+
+- [purl types](https://github.com/package-url/purl-spec/blob/master/PURL-TYPES.rst)
+- [Git repository](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols)
 
 # Develop
 
