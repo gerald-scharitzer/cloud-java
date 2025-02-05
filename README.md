@@ -37,12 +37,14 @@ The relevant artifacts can be addressed with URIs.
 |----------|-----------|------------------|----------------------------------------------------|
 | source   | github    | Git repository   | `git clone https://githost/git-repository`         |
 | library  | maven     | Maven repository | `implementation("group:name:version)`              |
+| builder  |           | Paketo builder   | `pack build image -B builder-repository`           |
 | image    | oci       | image registry   | `podman push https://imagehost/image-repository`   |
 | chart    | helm      | chart registry   | `helm push chart https://charthost/chart-registry` |
 | cluster  |           | Kubernetes API   | `kubectl login https://kubehost/kube-api`          |
 
 - [purl types](https://github.com/package-url/purl-spec/blob/master/PURL-TYPES.rst)
 - [Git repository](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols)
+- [Maven repository](https://maven.apache.org/repository/layout.html)
 
 # Develop
 
