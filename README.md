@@ -45,6 +45,7 @@ The relevant artifacts can be addressed with URIs.
 - [purl types](https://github.com/package-url/purl-spec/blob/master/PURL-TYPES.rst)
 - [Git repository](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols)
 - [Maven repository](https://maven.apache.org/repository/layout.html)
+- [Paketo builder](https://paketo.io/docs/concepts/builders/)
 
 # Develop
 
