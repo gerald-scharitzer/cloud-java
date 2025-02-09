@@ -46,6 +46,30 @@ The relevant artifacts can be addressed with URIs.
 - [Git repository](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols)
 - [Maven repository](https://maven.apache.org/repository/layout.html)
 - [Paketo builder](https://paketo.io/docs/concepts/builders/)
+- [OCI image registry](https://opencontainers.org/release-notices/overview/)
+- [chart registry](https://helm.sh/docs/topics/registries/)
+- [Kubernetes API](https://kubernetes.io/docs/reference/using-api/api-concepts/)
+
+## Kubernetes Jobs
+
+[run to completion](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/)
+and [restart either `Never` or `OnFailure`](https://kubernetes.io/docs/concepts/workloads/controllers/job/#pod-template).
+You must specify the `restartPolicy`.
+
+They run to completion once, if you do not set `spec.completions.`
+They run one pod at a time, if you do not set `spec.parallelism`.
+
+`helm install` works, if the job name does not exist.
+Then, it will try to run to completion once.
+
+`helm upgrade` without changing the chart or values does not change the completions
+and thus does not start a new pod.
+
+Incrementing the `completions` by one starts a new pod.
+This must deal with concurrent updates,
+which can be done with version control like Git.
+
+**TODO** Does changing the chart or values start a new pod? Probably not.
 
 # Develop
 
