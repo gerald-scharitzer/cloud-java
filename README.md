@@ -69,6 +69,9 @@ Incrementing the `completions` by one starts a new pod.
 This must deal with concurrent updates,
 which can be done with version control like Git.
 
+To address the jobs matching the completions, set the `completionMode` to `Indexed`.
+Then the job index is the completion number minus one.
+
 **TODO** Does changing the chart or values start a new pod? Probably not.
 
 # Develop
