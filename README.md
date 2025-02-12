@@ -50,6 +50,21 @@ The relevant artifacts can be addressed with URIs.
 - [chart registry](https://helm.sh/docs/topics/registries/)
 - [Kubernetes API](https://kubernetes.io/docs/reference/using-api/api-concepts/)
 
+## Kubernetes Ingress
+
+routes HTTP requests to Kubernetes services.
+
+It provides one or more web servers that can run on different nodes
+and implement the ingress controller interface.
+
+This specifies the interface only.
+The implementation of the ingress controller interface enforces the ingress.
+
+Put the web application firewalls before the ingress controllers.
+
+For more than one ingress controller instance,
+put a load balancer before the ingress controllers.
+
 ## Kubernetes Jobs
 
 [run to completion](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/)
