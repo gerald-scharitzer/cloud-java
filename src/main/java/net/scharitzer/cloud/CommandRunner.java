@@ -4,6 +4,8 @@ import net.scharitzer.cloud.provider.Provider;
 import net.scharitzer.cloud.provider.azure.Azure;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.boot.web.server.WebServer;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
@@ -22,7 +24,10 @@ public class CommandRunner implements CommandLineRunner {
 			read input (default stdin)
 		
 		v
-			print version""";
+			print version
+		
+		w
+			start web server""";
 
 	private InputStream stdin = System.in;
 	private PrintStream stdout = System.out;
@@ -45,6 +50,8 @@ public class CommandRunner implements CommandLineRunner {
 				readInput();
 			} else if (arg.equals("v")) {
 				printVersion();
+			} else if (arg.equals("w")) {
+				startWebServer();
 			}
 		}
 
@@ -64,6 +71,12 @@ public class CommandRunner implements CommandLineRunner {
 
 	private void printVersion() {
 		stdout.println(Main.VERSION);
+	}
+
+	private void startWebServer() {
+		TomcatServletWebServerFactory factory = new TomcatServletWebServerFactory();
+		WebServer server = factory.getWebServer();
+		stdout.println("TODO web server");
 	}
 
 }
