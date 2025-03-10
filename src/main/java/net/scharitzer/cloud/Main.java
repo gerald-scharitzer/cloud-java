@@ -3,6 +3,7 @@ package net.scharitzer.cloud;
 import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
@@ -16,8 +17,11 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		int status = SpringApplication.exit(SpringApplication.run(Main.class, args));
-		System.exit(status);
+		ConfigurableApplicationContext context = SpringApplication.run(Main.class, args);
+		if (context.isClosed()) {
+			int status = SpringApplication.exit(context);
+			System.exit(status);
+		}
 	}
 
 }
