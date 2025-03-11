@@ -127,6 +127,11 @@ where
 - `<registry>` is the name of the image registry
 - `<version>` is the semantic version
 
+## Interactive Run and Test
+
+- Start with `./gradlew bootRun --args='w'`
+- Stop with `Control-C`
+
 ## Release
 
 - Update year in [`LICENSE`](LICENSE)

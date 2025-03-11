@@ -76,6 +76,7 @@ public class CommandRunner implements CommandLineRunner {
 	private void startWebServer() {
 		TomcatServletWebServerFactory factory = new TomcatServletWebServerFactory();
 		WebServer server = factory.getWebServer();
+		server.start();
 		stdout.println("TODO web server");
 	}
 

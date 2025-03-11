@@ -1,12 +1,14 @@
 package net.scharitzer.cloud;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@Component
 public class WebApi {
 	@RequestMapping("/")
-	public String root() {
+	String root() { // FIXME not found
 		return "root";
 	}
 }
