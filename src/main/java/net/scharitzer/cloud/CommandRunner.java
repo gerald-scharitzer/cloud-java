@@ -4,8 +4,6 @@ import net.scharitzer.cloud.provider.Provider;
 import net.scharitzer.cloud.provider.azure.Azure;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
-import org.springframework.boot.web.server.WebServer;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
@@ -74,10 +72,7 @@ public class CommandRunner implements CommandLineRunner {
 	}
 
 	private void startWebServer() {
-		TomcatServletWebServerFactory factory = new TomcatServletWebServerFactory();
-		WebServer server = factory.getWebServer();
-		server.start();
-		stdout.println("TODO web server");
+		stdout.println("TODO get web server from ApplicationListener<WebServerInitializedEvent>");
 	}
 
 }
