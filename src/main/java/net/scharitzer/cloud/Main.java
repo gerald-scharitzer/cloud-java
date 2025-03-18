@@ -1,5 +1,6 @@
 package net.scharitzer.cloud;
 
+import net.scharitzer.cloud.api.Root;
 import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,8 +16,8 @@ public class Main {
 	public static final String VERSION = "0.0.1-SNAPSHOT";
 
 	@RequestMapping("/")
-	String root() { // TODO not found by WebServer
-		return "root"; // TODO return JSON
+	Root root() { // TODO not found by WebServer
+		return new Root();
 	}
 
 	@Bean
