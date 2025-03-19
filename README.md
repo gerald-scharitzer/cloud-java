@@ -102,7 +102,7 @@ with the following tools
 
 and the following commands.
 
-- Test with `./gradlew test`
+- Test with `. sh/test.sh`
 - Run with `./gradlew bootRun [--args='<arguments>']`
 - Pack with `./gradlew bootJar`
 - Run package with `java -jar build/libs/cloud-<version>.jar <arguments>`
